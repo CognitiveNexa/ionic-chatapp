@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="" />
+    </ion-buttons>
+     <ion-title  class="ion-padding-start">Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="signUp()" [formGroup]="credentials">
+        <ion-input label="Your email" label-placement="floating" type="email" inputmode="email" formControlName="email"></ion-input>
+        <ion-input label="Password" label-placement="floating" type="password" inputmode="password" formControlName="password"></ion-input>
+        <ion-button type="submit" expand="block" [disabled]="credentials.invalid">
+          Submit
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

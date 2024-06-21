@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Supa chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-content">
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="login()" [formGroup]="credentials">
+        <ion-input label="Your email" label-placement="floating" placeholder="Enter email" type="email" inputmode="email" formControlName="email" />
+        <ion-input label="Password" label-placement="floating" placeholder="Password" type="password" inputmode="password" formControlName="password" />
+        <ion-button type="submit" expand="block" [disabled]="credentials.invalid">
+          Submit
+        </ion-button>
+      </form>
+      <div class="ion-margin-top">
+        <ion-button expand="block" fill="outline" routerLink="register">
+          <ion-icon icon="person-outline" slot="start" />
+          Register
+        </ion-button>
+        <ion-button expand="block" fill="clear" (click)="forgotPassword()">
+          <ion-icon icon="key-outline" slot="start" />
+          Forgot password
+        </ion-button>
+        <ion-button expand="block" fill="outline" (click)="getMagicLink()">
+          <ion-icon name="mail-outline" slot="start" />
+          Get link
+        </ion-button>
+        <ion-button expand="block" fill="outline" (click)="withGoogle()">
+          <ion-icon icon="logo-google" slot="start" />
+          Google
+        </ion-button>
+        <ion-button expand="block" fill="outline" (click)="withFacebook()">
+          <ion-icon name="logo-facebook" slot="start" />
+          Facebook
+        </ion-button>
+        <ion-button expand="block" fill="outline" routerLink="groups">
+          <ion-icon name="arrow-forward-outline" slot="start" />
+          Continue
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
